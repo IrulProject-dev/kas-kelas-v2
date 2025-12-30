@@ -1,0 +1,60 @@
+/* public/css/filament-custom.css */
+
+/* 1. Background Utama Aurora */
+body,
+.fi-body {
+    background-color: #030014 !important; /* Warna dasar sangat gelap */
+    background-image:
+        radial-gradient(at 0% 0%, hsla(253,16%,7%,1) 0, transparent 50%),
+        radial-gradient(at 50% 0%, hsla(225,39%,30%,1) 0, transparent 50%),
+        radial-gradient(at 100% 0%, hsla(339,49%,30%,1) 0, transparent 50%) !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+}
+
+/* 2. Glassmorphism (Transparan) untuk semua Box/Card */
+.fi-section,
+.fi-wi-stats-overview-stat,
+.fi-ta-ctn, /* Container Tabel */
+.fi-widget {
+    background-color: rgba(255, 255, 255, 0.03) !important; /* Transparan */
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* 3. Sidebar dan Topbar Transparan */
+.fi-sidebar,
+.fi-topbar {
+    background-color: rgba(3, 0, 20, 0.7) !important; /* Sedikit lebih gelap dari card */
+    backdrop-filter: blur(15px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+/* 4. Menghilangkan background putih default di area konten utama */
+.fi-main {
+    background: transparent !important;
+}
+
+/* 5. Header Tabel agar tidak putih */
+.fi-ta-header-ctn {
+    background-color: transparent !important;
+}
+
+/* 6. Memastikan Teks Terbaca */
+.fi-wi-stats-overview-stat-value {
+    color: #ffffff !important;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+}
+
+.fi-wi-stats-overview-stat-label {
+    color: #94a3b8 !important;
+}
+
+.fi-topbar-item-theme-switcher,
+button[aria-label="Switch to light mode"],
+button[aria-label="Switch to dark mode"] {
+    display: none !important;
+}
