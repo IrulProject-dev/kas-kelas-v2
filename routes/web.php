@@ -4,6 +4,8 @@ use App\Models\Member;
 use App\Models\Week;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     // 1. Ambil data Member beserta transaksinya (Eager Loading biar cepat)
@@ -24,3 +26,12 @@ Route::get('/', function () {
         'months' => $months,
     ]);
 });
+
+// Custom logout route untuk Filament admin panel
+Route::post('/admin/logout', function (Request $request) {
+    Auth::logout();
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/');
+})->name('filament.admin.auth.logout');

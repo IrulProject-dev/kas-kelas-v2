@@ -32,9 +32,9 @@
                 <tr>
                     {{-- Sub-Header: Minggu (M1, M2, dst) --}}
                     @foreach($groupedWeeks as $weeksInMonth)
-                        @foreach($weeksInMonth as $idx => $week)
+                        @foreach($weeksInMonth as $week)
                             <th class="p-2 border-b border-r border-white/5 min-w-[60px] bg-white/5 text-gray-400 text-[10px] text-center font-mono">
-                                M{{ $idx + 1 }}
+                                {{ preg_replace('/ \([^)]+\)/', '', $week->name) }}
                             </th>
                         @endforeach
                     @endforeach

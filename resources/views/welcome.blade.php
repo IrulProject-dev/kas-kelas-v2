@@ -85,7 +85,7 @@
 
         <div class="container mx-auto px-6 text-center relative z-10">
             <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-6 leading-tight drop-shadow-xl">
-                Manage Your <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">Class Fund</span> <br> Effortlessly
+                Kas Kelas <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-purple-400">TRPL25A1</span> <br> Jos Jis...
             </h1>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto mb-10 drop-shadow-md">
                 Platform rekap Keuangan TRPL25A1. Transparansi, Akuntabilitas, dan Kemudahan dalam satu tempat.
@@ -104,8 +104,30 @@
             <p class="text-gray-400">Data pembayaran kas mingguan mahasiswa</p>
         </div>
 
-        <div class="w-full overflow-hidden rounded-2xl glass-card border border-white/10">
-            <div class="overflow-x-auto" style="max-height: 80vh;">
+        <!-- Desktop Table View -->
+        <div class="hidden md:block w-full overflow-hidden rounded-2xl glass-card border border-white/10 relative">
+            <!-- Scroll indicators -->
+            <div class="absolute top-0 right-0 h-10 w-20 bg-gradient-to-l from-[#020617] to-transparent z-50 pointer-events-none"></div>
+            <div class="absolute top-16 left-0 h-[calc(100%-4rem)] w-20 bg-gradient-to-r from-[#020617] to-transparent z-30 pointer-events-none shadow-[4px_0_15px_rgba(0,0,0,0.8)]"></div>
+            <div class="absolute top-16 right-0 h-[calc(100%-4rem)] w-20 bg-gradient-to-l from-[#020617] to-transparent z-50 pointer-events-none"></div>
+
+            <!-- Horizontal scroll buttons -->
+            <div class="absolute top-1/2 left-2 transform -translate-y-1/2 z-50">
+                <button onclick="scrollTable('left')" class="bg-[#020617]/80 hover:bg-[#0f172a] text-white p-2 rounded-full shadow-lg transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+            <div class="absolute top-1/2 right-2 transform -translate-y-1/2 z-50">
+                <button onclick="scrollTable('right')" class="bg-[#020617]/80 hover:bg-[#0f172a] text-white p-2 rounded-full shadow-lg transition-all">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+
+            <div id="tableContainer" class="overflow-x-auto" style="max-height: 80vh;">
                 <table class="w-full text-sm border-separate border-spacing-0">
                     <thead class="bg-[#020617] text-gray-200 uppercase sticky top-0 z-40 shadow-2xl">
                         <tr>
@@ -125,9 +147,9 @@
                         </tr>
                         <tr>
                             @foreach($months as $weeksInMonth)
-                                @foreach($weeksInMonth as $index => $week)
+                                @foreach($weeksInMonth as $week)
                                     <th class="p-2 border-b border-r border-white/10 bg-[#0f172a]/80 text-gray-400 text-[10px] text-center min-w-[70px]">
-                                        M{{ $index + 1 }}
+                                        {{ preg_replace('/ \([^)]+\)/', '', $week->name) }}
                                     </th>
                                 @endforeach
                             @endforeach
@@ -166,7 +188,7 @@
                                     <td class="p-2 border-r border-white/5 text-center align-middle">
                                         <div
                                             onclick="openInputModal({{ $member->id }}, {{ $week->id }}, {{ $amount }}, {{ $target }})"
-                                            class="w-full h-8 flex items-center justify-center rounded cursor-pointer transition-all {{ $badgeClass }}">
+                                            class="w-full h-8 flex items-center justify-center rounded cursor-pointer transition-all {{ $badgeClass }} min-h-[32px]">
                                             <span class="text-[10px] font-bold">
                                                 @if($amount > 0)
                                                     {{ number_format($amount/1000, 0) }}k
@@ -189,6 +211,63 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <!-- Mobile Card View -->
+        <div class="md:hidden space-y-4">
+            @foreach($members as $index => $member)
+            <div class="glass-card rounded-xl border border-white/10 p-4 bg-[#020617]/80">
+                <div class="flex justify-between items-start mb-3">
+                    <div>
+                        <h3 class="font-bold text-white text-lg">{{ $member->name }}</h3>
+                        <p class="text-gray-400 text-sm">NIM: {{ $member->nim }}</p>
+                    </div>
+                    <span class="px-2 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs border border-indigo-500/20">
+                        Active
+                    </span>
+                </div>
+
+                <div class="space-y-2 max-h-60 overflow-y-auto">
+                    @foreach($months as $monthName => $weeksInMonth)
+                        <div class="border-t border-white/10 pt-2">
+                            <h4 class="text-indigo-300 font-bold text-sm mb-1">{{ $monthName }}</h4>
+                            <div class="grid grid-cols-3 sm:grid-cols-4 gap-2">
+                                @foreach($weeksInMonth as $week)
+                                    @php
+                                        $trx = $member->transaction_members->firstWhere('week_id', $week->id);
+                                        $amount = $trx ? $trx->amount : 0;
+                                        $target = $week->nominal;
+
+                                        if ($amount >= $target) {
+                                            $badgeClass = 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20';
+                                        } elseif ($amount > 0) {
+                                            $badgeClass = 'bg-amber-500/10 text-amber-400 border border-amber-500/20';
+                                        } else {
+                                            $badgeClass = 'text-gray-600 border border-dashed border-gray-800';
+                                        }
+                                    @endphp
+                                    <div
+                                        onclick="openInputModal({{ $member->id }}, {{ $week->id }}, {{ $amount }}, {{ $target }})"
+                                        class="p-2 rounded text-center cursor-pointer transition-all {{ $badgeClass }} min-h-[40px] flex items-center justify-center"
+                                    >
+                                        <div class="text-xs">
+                                            <div class="font-bold">{{ preg_replace('/ \([^)]+\)/', '', $week->name) }}</div>
+                                            <div class="font-semibold">
+                                                @if($amount > 0)
+                                                    {{ number_format($amount/1000, 0) }}k
+                                                @else
+                                                    -
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            @endforeach
         </div>
     </div>
 
@@ -353,6 +432,45 @@
                 alert('Error koneksi server');
             });
         });
+
+        function scrollTable(direction) {
+            const container = document.getElementById('tableContainer');
+            const scrollAmount = 300; // Amount to scroll in pixels
+
+            if (direction === 'left') {
+                container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+            } else if (direction === 'right') {
+                container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+            }
+        }
+
+        // Add touch swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', e => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        document.addEventListener('touchend', e => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        function handleSwipe() {
+            const minSwipeDistance = 50;
+            const swipeDistance = touchStartX - touchEndX;
+
+            if (Math.abs(swipeDistance) > minSwipeDistance) {
+                if (swipeDistance > 0) {
+                    // Swipe left - scroll table right
+                    scrollTable('right');
+                } else {
+                    // Swipe right - scroll table left
+                    scrollTable('left');
+                }
+            }
+        }
     </script>
 </body>
 </html>
