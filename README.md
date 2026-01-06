@@ -1,59 +1,122 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
-
 <p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+  <a href="#" target="_blank">
+    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
+  </a>
 </p>
 
-## About Laravel
+<h1 align="center">Sistem Manajemen Kas Kelas (Aurora Theme)</h1>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p align="center">
+    Aplikasi manajemen keuangan kelas berbasis web modern dengan tampilan <b>Dark Mode Aurora</b> & <b>Glassmorphism</b>. Dibuat untuk memudahkan Bendahara dalam pencatatan, pelaporan, dan penagihan uang kas.
+</p>
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://img.shields.io/badge/Laravel-v10%2F11-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel"></a>
+<a href="https://filamentphp.com/"><img src="https://img.shields.io/badge/Filament-v3-F2C94C?style=for-the-badge&logo=php" alt="FilamentPHP"></a>
+<a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS"></a>
+<a href="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"></a>
+</p>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🔥 Fitur Utama
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Aplikasi ini tidak hanya sekedar mencatat angka, tapi memberikan pengalaman pengguna (UX) yang memanjakan mata dan memudahkan pekerjaan:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+-   **🎨 Aurora Glassmorphism UI:** Tampilan antarmuka modern, full dark mode dengan efek kaca (blur) yang estetik.
+-   **📊 Dashboard Interaktif:** Statistik pemasukan, pengeluaran, dan saldo akhir ditampilkan dengan grafik visual.
+-   **📅 Weekly Tracking:** Pencatatan kas per minggu yang fleksibel.
+-   **📲 WhatsApp Bill Reminder:** Fitur "Killer" yang memungkinkan bendahara mengirim pesan tagihan otomatis ke WhatsApp anggota yang belum bayar hanya dengan 1 klik.
+-   **👥 Member Management:** Kelola data mahasiswa (Nama, NIM, Status Aktif).
+-   **📉 Expense Tracking:** Pencatatan pengeluaran kelas (fotocopy, acara, dll) yang transparan.
+-   **📱 Mobile Responsive:** Tampilan admin panel menyesuaikan layar HP, Tablet, dan Desktop.
 
-## Laravel Sponsors
+## 📸 Screenshots
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+*(Silakan upload screenshot aplikasi kamu di sini)*
 
-### Premium Partners
+| Dashboard Aurora | Weekly List & Status |
+| :---: | :---: |
+| ![Dashboard](https://via.placeholder.com/600x400?text=Dashboard+Screenshot) | ![Weekly](https://via.placeholder.com/600x400?text=Table+Screenshot) |
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+---
 
-## Contributing
+## 🛠️ Teknologi yang Digunakan
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+-   **Framework:** [Laravel 10/11](https://laravel.com)
+-   **Admin Panel:** [FilamentPHP v3](https://filamentphp.com)
+-   **Frontend:** Blade, Livewire, Tailwind CSS
+-   **Database:** MySQL
+-   **Asset Bundler:** Vite
 
-## Code of Conduct
+## 🚀 Cara Install (Localhost)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Ikuti langkah-langkah ini untuk menjalankan project di komputer lokal Anda:
 
-## Security Vulnerabilities
+1.  **Clone Repository**
+    ```bash
+    git clone [https://github.com/username-kamu/nama-repo.git](https://github.com/username-kamu/nama-repo.git)
+    cd nama-repo
+    ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+2.  **Install Dependencies**
+    ```bash
+    composer install
+    npm install
+    ```
 
-## License
+3.  **Setup Environment**
+    -   Copy file `.env.example` menjadi `.env`
+    -   Atur konfigurasi database di file `.env`
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
+
+4.  **Database Migration & Seeder**
+    ```bash
+    php artisan migrate --seed
+    ```
+
+5.  **Build Assets (Penting untuk Tema Aurora)**
+    Karena menggunakan custom CSS, wajib menjalankan build:
+    ```bash
+    npm run build
+    ```
+
+6.  **Buat Storage Link**
+    Agar gambar profil/upload bisa muncul:
+    ```bash
+    php artisan storage:link
+    ```
+
+7.  **Jalankan Server**
+    ```bash
+    php artisan serve
+    ```
+    Buka `http://127.0.0.1:8000/admin` di browser.
+
+---
+
+## ☁️ Catatan Deployment (Shared Hosting/cPanel)
+
+Jika ingin meng-online-kan aplikasi ini di cPanel/Niagahoster:
+
+1.  Pastikan menggunakan **PHP 8.2+**.
+2.  Lakukan `npm run build` di local (laptop), lalu upload folder `public/build` ke hosting.
+3.  Jalankan `php artisan filament:assets` untuk mempublish aset default.
+4.  Gunakan **Symbolic Link** manual jika hosting memblokir fungsi `symlink()` PHP.
+5.  Set `APP_URL` di `.env` harus menggunakan `https://` agar tidak terjadi *Mixed Content Error*.
+
+## 👨‍💻 Author
+
+**Fauzan Fathoni Khoirul Huda**
+* **Prodi:** D4 Teknologi Rekayasa Perangkat Lunak (TRPL)
+* **Kampus:** Universitas Duta Bangsa Surakarta
+* **Angkatan:** 2025
+
+---
+
+## 📄 License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
