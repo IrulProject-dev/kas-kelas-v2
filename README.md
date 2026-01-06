@@ -1,6 +1,6 @@
 <p align="center">
   <a href="#" target="_blank">
-    <img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="300" alt="Laravel Logo">
+    <img src="https://lh3.googleusercontent.com/d/1-TrhdCX8Geg0MPz6wW44Gst2bRhawRC3" width="300" alt="TRPL Logo">
   </a>
 </p>
 
@@ -12,7 +12,7 @@
 
 <p align="center">
 <a href="https://github.com/laravel/framework/actions"><img src="https://img.shields.io/badge/Laravel-v10%2F11-FF2D20?style=for-the-badge&logo=laravel" alt="Laravel"></a>
-<a href="https://filamentphp.com/"><img src="https://img.shields.io/badge/Filament-v3-F2C94C?style=for-the-badge&logo=php" alt="FilamentPHP"></a>
+<a href="https://filamentphp.com/"><img src="https://img.shields.io/badge/Filament-v3-F2C94C?style=for-the-badge" alt="FilamentPHP"></a>
 <a href="https://tailwindcss.com/"><img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css" alt="Tailwind CSS"></a>
 <a href="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License"></a>
 </p>
@@ -26,18 +26,15 @@ Aplikasi ini tidak hanya sekedar mencatat angka, tapi memberikan pengalaman peng
 -   **🎨 Aurora Glassmorphism UI:** Tampilan antarmuka modern, full dark mode dengan efek kaca (blur) yang estetik.
 -   **📊 Dashboard Interaktif:** Statistik pemasukan, pengeluaran, dan saldo akhir ditampilkan dengan grafik visual.
 -   **📅 Weekly Tracking:** Pencatatan kas per minggu yang fleksibel.
--   **📲 WhatsApp Bill Reminder:** Fitur "Killer" yang memungkinkan bendahara mengirim pesan tagihan otomatis ke WhatsApp anggota yang belum bayar hanya dengan 1 klik.
 -   **👥 Member Management:** Kelola data mahasiswa (Nama, NIM, Status Aktif).
 -   **📉 Expense Tracking:** Pencatatan pengeluaran kelas (fotocopy, acara, dll) yang transparan.
 -   **📱 Mobile Responsive:** Tampilan admin panel menyesuaikan layar HP, Tablet, dan Desktop.
 
 ## 📸 Screenshots
 
-*(Silakan upload screenshot aplikasi kamu di sini)*
-
 | Dashboard Aurora | Weekly List & Status |
 | :---: | :---: |
-| ![Dashboard](https://via.placeholder.com/600x400?text=Dashboard+Screenshot) | ![Weekly](https://via.placeholder.com/600x400?text=Table+Screenshot) |
+| ![Dashboard](https://lh3.googleusercontent.com/d/1842Dty-AvNSZXR00qZ9YuXD7ceJwLAkI) | ![Weekly](https://lh3.googleusercontent.com/d/1j08MGPQEK3rHq9GzPNfNfWCm3_6tPI-c) |
 
 ---
 
@@ -55,8 +52,8 @@ Ikuti langkah-langkah ini untuk menjalankan project di komputer lokal Anda:
 
 1.  **Clone Repository**
     ```bash
-    git clone [https://github.com/username-kamu/nama-repo.git](https://github.com/username-kamu/nama-repo.git)
-    cd nama-repo
+    git clone https://github.com/IrulProject-dev/kas-kelas-v2.git
+    cd kas-kelas-v2
     ```
 
 2.  **Install Dependencies**
@@ -114,6 +111,7 @@ Jika ingin meng-online-kan aplikasi ini di cPanel/Niagahoster:
 * **Prodi:** D4 Teknologi Rekayasa Perangkat Lunak (TRPL)
 * **Kampus:** Universitas Duta Bangsa Surakarta
 * **Angkatan:** 2025
+* **Instagram:** [_f.thoni](https://www.instagram.com/_f.thoni/)
 
 ---
 
